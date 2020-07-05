@@ -1,0 +1,322 @@
+<!doctype html>
+<html class="no-js">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=0">
+	<meta name="viewport" content="width=drvice-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;"> -->
+		<meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1">
+		<title>果然乐</title>
+
+		<link rel="icon" type="image/png" href="../qgj_qt/images/favicon.png">
+
+		<link rel="stylesheet" href="css/swiper.min.css">
+		<link rel="stylesheet" href="css/app.css">
+		<!-- jquery -->
+		<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+		<script src="js/swiper.min.js"></script>
+
+	</head>
+
+	<body>
+
+		<!-- 搜索 -->
+		<!-- 搜索框 -->
+		<div class="search_bomb_box">
+			<div class="search_top fix">
+				<a class="search_bomb_box_a"><img src="images/back_jt.png"></a>
+				<div>
+					<form>
+						<input type="text" name="" placeholder="新品上市">
+						<button type="submit"><img src="images/sous.png"></button>
+					</form>
+				</div>
+			</div>
+			<div class="search_txt">
+				<h2>热门搜索</h2>
+				<ul>
+					<li>
+						<a href="">苹果</a>
+					</li>
+					<li>
+						<a href="">香蕉</a>
+					</li>
+					<li>
+						<a href="">可口</a>
+					</li>
+					<li>
+						<a href="">时鲜</a>
+					</li>
+					<li>
+						<a href="">火龙果</a>
+					</li>
+					<li>
+						<a href="">樱桃</a>
+					</li>
+					<li>
+						<a href="">香瓜</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div style="height: .75rem;"></div>
+		<!-- 外框 -->
+		<div id="waik">
+			<!-- 头部 -->
+			<div class="indix_top">
+				<div class="sos_t">
+					<input type="text" id="input1" placeholder="新品上市" />
+				</div>
+			</div>
+			<!-- banner -->
+			<div class="swiper-container banner_shouy">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><img src="images/time4.jpg"></div>
+					<div class="swiper-slide"><img src="images/timg.jpg"></div>
+				</div>
+				<div class="swiper-pagination lunbo_banner"></div>
+			</div>
+			<style>
+				.kuaijdh_container a {
+					width: 85%;
+					height: 1.4rem;
+					margin: 10px 0;
+					display: block;
+					box-shadow: none;
+					border-radius: 5px;
+				}
+			</style>
+			<!-- 快捷导航 -->
+			<div class="kuaijdh_container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<a href="#">
+							<img src="images/r1.png" alt="">
+							<p>精品推荐</p>
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#">
+							<img src="images/r2.png" alt="">
+							<p>一口价</p>
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#">
+							<img src="images/r.png" alt="">
+							<p>限时专场</p>
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#">
+							<img src="images/r3.png" alt="">
+							<!-- 不用就删除 -->
+							<p>备注分类</p>
+						</a>
+					</div>
+				</div>
+
+				<!-- Add Pagination -->
+				<!-- <div class="swiper-pagination"></div> -->
+			</div>
+			<script>
+				var swiper = new Swiper('.kuaijdh_container', {
+					slidesPerView: 3,
+					slidesPerColumn: 1,
+					spaceBetween: 0,
+					// pagination: {
+					// el: '.swiper-pagination',
+					// clickable: true,
+					// },
+				});
+			</script>
+			<!-- 行业新闻 -->
+			<div class="hangye_news">
+				<div class="biaot_zong">
+					<h2>鲜果快报 ：</h2>
+					<a href="report.html">今 年 的 砂 糖 橘，为 何 如 此 这 般 甜！</a>
+				</div>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function() {
+					//书讯快递循环垂直向上滚动
+					function movedome() {
+						var margintop = 0; //上边距的偏移量
+						var stop = false;
+						setInterval(function() {
+							if(stop == true) {
+								return;
+							}
+							$("#express").children("li").first().animate({
+								"margin-top": margintop--
+							}, 0, function() {
+								var $li = $(this);
+								if(!$li.is(":animated")) { //第一个li的动画结束时
+									if(-margintop > $li.height()) {
+										$li.css("margin-top", "0px").appendTo($("#express"));
+										margintop = 0;
+									}
+								}
+							});
+						}, 50);
+						//鼠标放到快递信息(ul)上时
+						$("#express").hover(function() {
+							$(this).css("cursor", "pointer");
+							stop = true; //停止动画
+						}, function() {
+							stop = false; //开始动画
+						});
+					}
+					movedome();
+				});
+			</script>
+			<!-- 商品列表 -->
+			<div class="index_shangp_list">
+				<div class="biaot_gy_er">
+					<p>店长推荐</p>
+				</div>
+				<ul>
+					<li>
+						<a href="">
+							<h2><img src="images/nihoutao.jpg" alt=""></h2>
+							<p>澳大利亚进口精选猕猴桃</p>
+							<span><font style="color:#FD5E53;font-size:24px;font-family:"仿宋";">￥26</font><i><font style="font-size:14px;color: #BFBFBF;">/份</font></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<h2><img src="images/pinggguo.jpg" alt=""></h2>
+							<p>新疆特产糖心苹果</p>
+							<span><font style="color:#FD5E53;font-size: 24px;">￥36</font><i><font style="color: #BFBFBF;">/份</font></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<h2><img src="images/shiliu.jpg" alt=""></h2>
+							<p>怀远玉石籽石榴</p>
+							<span><font style="color:#FD5E53;font-size:20px;font-family:"仿宋";">￥42</font><i><font style="color: #BFBFBF;">/份</font></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<h2><img src="images/xianggua.jpg" alt=""></h2>
+							<p>东北现摘超甜香瓜</p>
+							<span><font style="color:#FD5E53;font-size:20px;font-family:"仿宋";">￥32</font><i><font style="color: #BFBFBF;">/份</font></i></span>
+						</a>
+					</li>
+				</ul>
+				<!--<div style="height:100px;line-height: 40px;text-align: center;color:#bbb">加载中</div>-->
+			</div>
+			<div class="index_shangp_list">
+				<div class="biaot_gy_er">
+					<p>热卖优惠</p>
+				</div>
+				<ul>
+					<li>
+						<a href="">
+							<h2><img src="images/nihoutao.jpg" alt=""></h2>
+							<p>澳大利亚进口精选猕猴桃</p>
+							<span><font style="color:#FD5E53;font-size:24px;font-family:"仿宋";">￥26</font><i><font style="font-size:14px;color: #BFBFBF;">/份</font></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<h2><img src="images/pinggguo.jpg" alt=""></h2>
+							<p>新疆特产糖心苹果</p>
+							<span><font style="color:#FD5E53;font-size: 24px;">￥36</font><i><font style="color: #BFBFBF;">/份</font></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<h2><img src="images/shiliu.jpg" alt=""></h2>
+							<p>怀远玉石籽石榴</p>
+							<span><font style="color:#FD5E53;font-size:20px;font-family:"仿宋";">￥42</font><i><font style="color: #BFBFBF;">/份</font></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<h2><img src="images/xianggua.jpg" alt=""></h2>
+							<p>东北现摘超甜香瓜</p>
+							<span><font style="color:#FD5E53;font-size:20px;font-family:"仿宋";">￥32</font><i><font style="color: #BFBFBF;">/份</font></i></span>
+						</a>
+					</li>
+				</ul>
+				<div style="height:100px;line-height: 40px;text-align: center;color:#bbb">qwq~玩命加载中...</div>
+			</div>
+			<!-- 底部导航 -->
+			<div class="foot_menu">
+				<!-- <div class="bei"></div>  -->
+				<ul>
+					<li class="no">
+						<a href="index.html">
+							<i><img src="images/footer.png"></i>
+							<span>首页</span>
+						</a>
+					</li>
+					<li>
+						<a href="mall_class.html">
+							<i><img src="images/footer1.png"></i>
+							<span>分类</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<i><img src="images/footer2.png"></i>
+							<span>购物车</span>
+						</a>
+					</li>
+					<li>
+						<a href="my.html">
+							<i><img src="images/footer4.png"></i>
+							<span>我的</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- 外框结束div -->
+		</div>
+
+	</body>
+
+</html>
+<script>
+	alert("本页面适合iPhone6手机端，建议使用手机查看_qwer201l45");
+</script>
+<script>
+	// 首页
+	// 搜索显示隐藏
+	$(function() {
+		$("#input1").mousedown(
+			function() {
+				$(".search_bomb_box").show()
+				$("#waik").hide()
+			}
+		)
+		$(".search_bomb_box .search_top>a").mousedown(
+			function() {
+				$(".search_bomb_box").hide()
+				$("#waik").show()
+			}
+		)
+	})
+
+	// 选择城市
+	$("#citypick").click(function() {
+		citypicker();
+	});
+
+	// banner
+	var swiper = new Swiper('.banner_shouy', {
+		pagination: {
+			el: '.swiper-pagination',
+		},
+		autoplay: {
+			delay: 3000,
+			stopOnLastSlide: false,
+			disableOnInteraction: true,
+		},
+	});
+</script>
